@@ -8,6 +8,7 @@ when 'rhel', 'fedora', 'centos'
   remote_file '/tmp/' + node['allegrograph']['package_name'] + '.rpm' do 
     source node['allegrograph']['rpm_url']
     checksum node['allegrograph']['rpm_checksum']
+    not_if { ::File.exists?("/etc/agraph/agraph.cfg") }
   end
 
   rpm_package node['allegrograph']['package_name'] do 
@@ -49,7 +50,7 @@ else
   
   execute "unpack allegrograph" do
     command "tar xzf /tmp/#{node['allegrograph']['package_name']}.tar.gz --strip-components=1 -C /tmp/agraph"
-    creates "/tmp/agraph"
+    creates "/usr/local/allegrograph"
   end
   
   execute "install allegrograph" do
