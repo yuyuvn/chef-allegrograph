@@ -1,0 +1,16 @@
+# AllegroGraph configuration file
+RunAs root
+Port <%= node['allegrograph']['http_port'] %>
+SettingsDirectory /var/lib/agraph/settings
+LogDir /var/log/agraph
+PidFile /var/run/agraph/agraph.pid
+InstanceTimeout 604800
+
+<RootCatalog>
+ Main /var/lib/agraph/rootcatalog
+</RootCatalog>
+
+<SystemCatalog>
+ Main /var/lib/agraph/systemcatalog
+ InstanceTimeout 10
+</SystemCatalog>
