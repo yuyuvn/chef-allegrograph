@@ -62,6 +62,6 @@ when 'rhel', 'fedora', 'centos'
   end
 else
   execute "start allegrograph" do
-    command "/etc/agraph/bin/agraph-control --config /etc/agraph/agraph.cfg start"
+    command "/etc/agraph/bin/agraph-control --config /etc/agraph/agraph.cfg restart"
   end
 end
