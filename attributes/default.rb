@@ -1,4 +1,3 @@
-default['allegrograph']['tmp_dir'] = '/tmp'
 default['allegrograph']['http_port'] = '10035'
 default['allegrograph']['package_name'] = 'agraph-5.1-1'
 default['allegrograph']['super_user']['name'] = 'root'
